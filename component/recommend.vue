@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import relist from "relist.vue"
+	import relist from "./relist.vue";
 
 	module.exports={
 		components:{
@@ -14,4 +14,3 @@ import relist from "relist.vue"
 		}
 	}
 </script>
-

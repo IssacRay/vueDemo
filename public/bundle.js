@@ -18647,9 +18647,7 @@ module.exports = {
 		rheader: _rheader2.default,
 		rtop: _rtop2.default
 	}
-};
-// import home from "./home.vue";
-//
+}; //
 //
 //
 //
@@ -18666,21 +18664,23 @@ module.exports = {
 "use strict";
 
 
-//
-//
-//
-//
-//
-//
+var _relist = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"relist.vue\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
-// import rheader from "./rheader.vue";
-// import rtop from "./rtop.vue";
+var _relist2 = _interopRequireDefault(_relist);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 module.exports = {
 	components: {
-		// rheader:rheader,
-		// rtop:rtop,
+		relist: _relist2.default
 	}
-};
+}; //
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 17 */
@@ -18780,9 +18780,7 @@ module.exports = {
 //
 //
 
-module.exports = {
-	mounted: {}
-};
+module.exports = {};
 
 /***/ }),
 /* 20 */
@@ -18797,11 +18795,13 @@ module.exports = {
 //
 //
 //
+//
+//
 
 module.exports = {
 	data: function data() {
 		return {
-			item: ""
+			item: "0"
 		};
 	},
 	computed: {
@@ -18813,7 +18813,7 @@ module.exports = {
 		click: function click(data) {
 			this.item = data;
 			this.$store.commit('setindexRouterId', this.item);
-			console.log(this.item);
+			console.log(data);
 		}
 	}
 };
@@ -18972,7 +18972,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.rtop{\n\twidth: 100%;\n\theight: 30px;\n\tdisplay: flex;\n\tbox-sizing: border-box;\n\tborder:2px solid #fff;\n}\n.rtop li{\n\tflex:1;\n\tlist-style: none;\n\tline-height: 30px;\n\ttext-align: center;\n}\n.rtop .light{\n\tcolor:#fff;\n\tbackground-color: #7e57c2;\n}\n", ""]);
+exports.push([module.i, "\n.rtop{\n\twidth: 100%;\n\theight: 30px;\n\tdisplay: flex;\n\tbox-sizing: border-box;\n\tborder:2px solid #fff;\n}\n.rtop .li{\n\tflex:1;\n\tlist-style: none;\n\tline-height: 26px;\n\ttext-align: center;\n}\n.rtop .light{\n\tcolor:#fff;\n\tbackground-color: #7e57c2;\n}\n", ""]);
 
 // exports
 
@@ -18986,7 +18986,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -19563,10 +19563,8 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('p', [_vm._v("推荐页")])])
-}]}
+  return _c('div', [_c('p', [_vm._v("推荐页")]), _vm._v(" "), _c('relist')], 1)
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -19663,12 +19661,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "rtop"
   }, _vm._l((_vm.titles), function(title, index) {
     return _c('router-link', {
+      staticClass: "li",
+      attrs: {
+        "to": title.href,
+        "tag": "li"
+      }
+    }, [_c('li', {
       class: {
         'light': _vm.item == index
-      },
-      attrs: {
-        "tag": "li",
-        "to": title.href
       },
       domProps: {
         "textContent": _vm._s(title.title)
@@ -19678,7 +19678,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           _vm.click(index)
         }
       }
-    })
+    })])
   }))
 },staticRenderFns: []}
 module.exports.render._withStripped = true
