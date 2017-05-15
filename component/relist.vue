@@ -2,10 +2,10 @@
 	<div>
 		<nav class="relist">
 			<li>
-				<img src="" alt="" v-if="1">
 				<div>
-					<h3>这是标题</h3>
-					<p>这是内容</p>
+					<img src="" alt="" v-if="1">
+					<h3> 这是标题</h3>
+					<p> 这是内容</p>
 				</div>
 			</li>
 		</nav>
@@ -25,17 +25,24 @@
 <style>
 	.relist{
 		width: 100%;
-		height: 68px;
-		padding: 2px;
 	}
 	.relist li img{
-		width: 68px;
+		width: 70px;
 		height: 68px;
 		float:left;
-		background-color: #fc0;
+		padding-right: 2px;
 	} 
-	.relist li div{
-		float:left;
-		background-color: red;
+	.relist li div h3,.relist li div p{
+		margin:0;
+		padding:0;
+		padding-left: 2px;
+	}
+	.relist li{
+		list-style: none;
+		height: 74px;
+		padding: 2px;
+		padding-bottom:4px;
+		border-bottom:1px solid #000;
+		margin:2px;
 	}
 </style>

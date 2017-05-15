@@ -1,6 +1,8 @@
 <template>
 	<div>
-		<p>推荐页</p>
+		<div class="top_margin"></div>
+		<relist></relist>
+		<relist></relist>
 		<relist></relist>
 	</div>
 </template>
@@ -14,3 +16,9 @@
 		}
 	}
 </script>
+<style>
+	.top_margin{
+		width: 100%;
+		height:10px;
+	}
+</style>
