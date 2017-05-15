@@ -1,7 +1,10 @@
+import $ from "jquery";
+window.$ = $;
 import Vue from "vue";
 import VueRouter from "vue-router";
 import MuseUi from "muse-ui";
 import Vuex from "vuex";
+
 Vue.use(MuseUi);
 Vue.use(VueRouter);
 Vue.use(Vuex);

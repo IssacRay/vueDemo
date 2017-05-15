@@ -3,7 +3,7 @@
 		<nav class="relist">
 			<li>
 				<div>
-					<img src="" alt="" v-if="1">
+					<img src="" alt="" v-if="">
 					<h3> 这是标题</h3>
 					<p> 这是内容</p>
 				</div>
@@ -18,8 +18,15 @@
 			return{
 				
 			}
-		}
+		},
+	// 	methods:{
+
+	// 	},
+	// 	mounted:{
+
+	// 	}
 	}
+	// console.log($);
 </script>
 
 <style>
