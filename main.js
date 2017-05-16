@@ -4,12 +4,14 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import MuseUi from "muse-ui";
 import Vuex from "vuex";
+import swiper from "swiper";
 
 Vue.use(MuseUi);
 Vue.use(VueRouter);
 Vue.use(Vuex);
 
 import "muse-ui/dist/muse-ui.css";
+import "swiper/dist/css/swiper.css";
 
 import index from "./component/index.vue";
 import recommend from "./component/recommend.vue";
@@ -37,7 +39,7 @@ var router = new VueRouter({
 })
 var store =new Vuex.Store({
 	state:{
-		title:[{title:"首页",href:"home"},{title:"推荐",href:"recommend"}],
+		title:[{title:"首页",href:"home"},{title:"推荐",href:"recommend"},{title:"应用",href:"apply"}],
 		indexRouterId:"0",
 		topid:""
 	},
