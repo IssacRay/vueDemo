@@ -1,13 +1,15 @@
 <template>
 	<div>
 		<nav class="relist">
-			<li v-for="topic in topics">
+		<router-link :to="url" tag="div">	
+			<li v-for="topic in topics" @click=click(topic.id)>
 				<div>
 					<img :src="topic.author.avatar_url" alt="" v-if="">
 					<h3 v-text="topic.title"> 这是标题</h3>
 					<p> 这是内容1</p>
 				</div>
 			</li>
+		</router-link>	
 		</nav>
 	</div>
 </template>
@@ -18,7 +20,8 @@
 	module.exports={
 		data:function(){
 			return{
-				topics:"",
+				topics:[],
+				url:"",
 			}
 		},
 		methods:{
@@ -29,12 +32,19 @@
 					url:"https://cnodejs.org/api/v1/topics",
 					async:true,
 					success(data){
-						console.log(data.data)
-						var tpcarr = data.data
-						self.topics = data.data;
+						console.log(data.data);
+						var tpcarr = data.data;
+						// tpcarr=tpcarr.slice(0,10);
+						// console.log(tpcarr);
+						self.topics = self.topics.concat(tpcarr);
 						// this.title = data.data.title;
 					}
 				});
+			},
+			click:function(id){
+				this.$store.commit("settopid",id);
+				this.url="/topic?id="+id;
+
 			}
 		},
 		mounted:function(){

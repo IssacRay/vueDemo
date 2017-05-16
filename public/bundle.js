@@ -28543,29 +28543,23 @@ module.exports = {
 "use strict";
 
 
-var _jquery = __webpack_require__(4);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
 var _relist = __webpack_require__(37);
 
 var _relist2 = _interopRequireDefault(_relist);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
-//
-//
-//
-//
-//
-//
-
 module.exports = {
 	components: {
 		relist: _relist2.default
 	}
-};
+}; //
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 19 */
@@ -28574,7 +28568,7 @@ module.exports = {
 "use strict";
 
 
-//
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; //
 //
 //
 //
@@ -28590,12 +28584,43 @@ module.exports = {
 //
 
 //测试
+
+
+var _jquery = __webpack_require__(4);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 module.exports = {
 	data: function data() {
-		return {};
+		return {
+			topics: ""
+		};
+	},
+	methods: {
+		getDetail: function getDetail() {
+			var self = this;
+			_jquery2.default.ajax({
+				type: "get",
+				url: "https://cnodejs.org/api/v1/topics",
+				async: true,
+				success: function success(data) {
+					console.log(data.data);
+					var tpcarr = data.data;
+					console.log(typeof tpcarr === "undefined" ? "undefined" : _typeof(tpcarr));
+
+					self.topics = data.data;
+					// this.title = data.data.title;
+				}
+			});
+		}
+	},
+	mounted: function mounted() {
+		this.getDetail();
 	}
 };
-console.log($);
+console.log(_jquery2.default);
 
 /***/ }),
 /* 20 */
@@ -28607,6 +28632,7 @@ console.log($);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+//
 //
 //
 //
@@ -28643,6 +28669,7 @@ exports.default = {
 "use strict";
 
 
+//
 //
 //
 //
@@ -28857,7 +28884,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.relist{\n\twidth: 100%;\n}\n.relist li img{\n\twidth: 70px;\n\theight: 68px;\n\tfloat:left;\n\tpadding-right: 2px;\n}\n.relist li div h3,.relist li div p{\n\tmargin:0;\n\tpadding:0;\n\tpadding-left: 2px;\n}\n.relist li{\n\tlist-style: none;\n\theight: 74px;\n\tpadding: 2px;\n\tpadding-bottom:4px;\n\tborder-bottom:1px solid #000;\n\tmargin:2px;\n}\n", ""]);
+exports.push([module.i, "\n.relist{\n\twidth: 100%;\n}\n.relist li img{\n\twidth: 70px;\n\theight: 68px;\n\tfloat:left;\n\tpadding-right: 2px;\n\tborder-radius: 5px;\n}\n.relist li div h3,.relist li div p{\n\tmargin:0;\n\tpadding:0;\n\tpadding-left: 2px;\n\toverflow: hidden;\n\ttext-overflow:ellipsis;\n\twhite-space: nowrap;\n}\n.relist li{\n\tlist-style: none;\n\theight: 74px;\n\tpadding: 2px;\n\tpadding-bottom:4px;\n\tborder-bottom:1px solid #ccc;\n\tmargin:2px;\n}\n", ""]);
 
 // exports
 
@@ -28871,7 +28898,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.rfooter{\n  position:fixed;\n  bottom:0;\n  left: 0;\n  width: 100%;\n}\n", ""]);
+exports.push([module.i, "\n.rfooter{\n  position:fixed;\n  bottom:0;\n  left: 0;\n  width: 100%;\n}\n.ffixed{\n  height: 56px;\n}\n", ""]);
 
 // exports
 
@@ -28913,7 +28940,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.rheader{\n\theight: 42px;\n}\n", ""]);
+exports.push([module.i, "\n.rheader{\n\theight: 42px;\n\tposition: fixed;\n\ttop:0;\n\tleft:0;\n}\n.hfixed{\n\theight: 42px;\n}\n", ""]);
 
 // exports
 
@@ -29520,9 +29547,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
-    staticClass: "top_margin"
-  }), _vm._v(" "), _c('relist')], 1)
+  return _c('div', [_c('relist')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -29537,17 +29562,21 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('nav', {
     staticClass: "relist"
-  }, [_c('li', [_c('div', [_c('img', {
-    attrs: {
-      "src": "",
-      "alt": ""
-    }
-  }), _vm._v(" "), _c('h3', [_vm._v(" 这是标题")]), _vm._v(" "), _c('p', [_vm._v(" 这是内容")])])])])])
-}]}
+  }, _vm._l((_vm.topics), function(topic) {
+    return _c('li', [_c('div', [_c('img', {
+      attrs: {
+        "src": topic.author.avatar_url,
+        "alt": ""
+      }
+    }), _vm._v(" "), _c('h3', {
+      domProps: {
+        "textContent": _vm._s(topic.title)
+      }
+    }, [_vm._v(" 这是标题")]), _vm._v(" "), _c('p', [_vm._v(" 这是内容1")])])])
+  }))])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -29591,9 +29620,11 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  return _c('div', [_c('div', {
+    staticClass: "ffixed"
+  }), _vm._v(" "), _c('mu-paper', {
     staticClass: "rfooter"
-  }, [_c('mu-paper', [_c('mu-bottom-nav', {
+  }, [_c('mu-bottom-nav', {
     attrs: {
       "value": _vm.bottomNav,
       "shift": ""
@@ -29733,7 +29764,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "icon": "expand_more"
     },
     slot: "right"
-  })], 1)], 1)
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "hfixed"
+  })], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

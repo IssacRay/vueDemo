@@ -14,6 +14,7 @@ import "muse-ui/dist/muse-ui.css";
 import index from "./component/index.vue";
 import recommend from "./component/recommend.vue";
 import home from "./component/home.vue";
+import topic from "./component/rtopic.vue";
 
 var router = new VueRouter({
 	routes:[{
@@ -27,6 +28,9 @@ var router = new VueRouter({
 			component:recommend
 		}]
 	},{
+		path:"/topic",
+		component:topic
+	},{
 		path:"/",
 		redirect:"/index/home",
 	}]
@@ -35,6 +39,7 @@ var store =new Vuex.Store({
 	state:{
 		title:[{title:"首页",href:"home"},{title:"推荐",href:"recommend"}],
 		indexRouterId:"0",
+		topid:""
 	},
 	mutations:{
 		settitle:function(state,data){
@@ -42,6 +47,9 @@ var store =new Vuex.Store({
 		},
 		setindexRouterId:function(state,data){
 			return state.indexRouterId=data;
+		},
+		settopid:function(state,data){
+			return state.topid=data;
 		}
 	},
 	getters:{
@@ -50,6 +58,9 @@ var store =new Vuex.Store({
 		},
 		getindexRouterId:function(state){
 			return state.indexRouterId;
+		},
+		gettopid:function(state){
+			return state.topid;
 		}
 	}
 })
