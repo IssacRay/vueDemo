@@ -2,8 +2,6 @@
 	<div>
 		<div class="top_margin"></div>
 		<relist></relist>
-		<relist></relist>
-		<relist></relist>
 	</div>
 </template>
 

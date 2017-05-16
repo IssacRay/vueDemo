@@ -9349,36 +9349,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-module.exports = function (module) {
-	if (!module.webpackPolyfill) {
-		module.deprecate = function () {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if (!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function get() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function get() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 /* WEBPACK VAR INJECTION */(function(module) {var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -19208,7 +19178,37 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	return jQuery;
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (module) {
+	if (!module.webpackPolyfill) {
+		module.deprecate = function () {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if (!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function get() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function get() {
+				return module.i;
+			}
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
 
 /***/ }),
 /* 6 */
@@ -24769,7 +24769,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };"undefined" != typeof window && window.Vue && ut(window.Vue), e.default = { config: ot.a, install: ut };
   }]);
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
 
 /***/ }),
 /* 7 */
@@ -28085,7 +28085,7 @@ module.exports = Component.exports
 "use strict";
 
 
-var _jquery = __webpack_require__(5);
+var _jquery = __webpack_require__(4);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -28132,7 +28132,6 @@ var router = new _vueRouter2.default({
 	routes: [{
 		path: "/index",
 		component: _index2.default,
-		redirect: "/index/home",
 		children: [{
 			path: "home",
 			component: _home2.default
@@ -28140,6 +28139,9 @@ var router = new _vueRouter2.default({
 			path: "recommend",
 			component: _recommend2.default
 		}]
+	}, {
+		path: "/",
+		redirect: "/index/home"
 	}]
 });
 var store = new _vuex2.default.Store({
@@ -28541,25 +28543,29 @@ module.exports = {
 "use strict";
 
 
+var _jquery = __webpack_require__(4);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
 var _relist = __webpack_require__(37);
 
 var _relist2 = _interopRequireDefault(_relist);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//
+//
+//
+//
+//
+//
+//
+
 module.exports = {
 	components: {
 		relist: _relist2.default
 	}
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
+};
 
 /***/ }),
 /* 19 */
@@ -28583,6 +28589,7 @@ module.exports = {
 //
 //
 
+//测试
 module.exports = {
 	data: function data() {
 		return {};
@@ -29515,7 +29522,7 @@ module.exports = Component.exports
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('div', {
     staticClass: "top_margin"
-  }), _vm._v(" "), _c('relist'), _vm._v(" "), _c('relist'), _vm._v(" "), _c('relist')], 1)
+  }), _vm._v(" "), _c('relist')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

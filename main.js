@@ -19,7 +19,6 @@ var router = new VueRouter({
 	routes:[{
 		path:"/index",
 		component:index,
-		redirect:"/index/home",
 		children:[{
 			path:"home",
 			component:home
@@ -27,6 +26,9 @@ var router = new VueRouter({
 			path:"recommend",
 			component:recommend
 		}]
+	},{
+		path:"/",
+		redirect:"/index/home",
 	}]
 })
 var store =new Vuex.Store({

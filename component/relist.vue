@@ -1,11 +1,11 @@
 <template>
 	<div>
 		<nav class="relist">
-			<li>
+			<li v-for="topic in topics">
 				<div>
-					<img src="" alt="" v-if="">
-					<h3> 这是标题</h3>
-					<p> 这是内容</p>
+					<img :src="topic.author.avatar_url" alt="" v-if="">
+					<h3 v-text="topic.title"> 这是标题</h3>
+					<p> 这是内容1</p>
 				</div>
 			</li>
 		</nav>
@@ -14,20 +14,33 @@
 
 <script>
 //测试
+	import $ from "jquery";
 	module.exports={
 		data:function(){
 			return{
-				
+				topics:"",
 			}
 		},
-	// 	methods:{
-
-	// 	},
-	// 	mounted:{
-
-	// 	}
+		methods:{
+			getDetail:function() {
+				var self = this
+				$.ajax({
+					type:"get",
+					url:"https://cnodejs.org/api/v1/topics",
+					async:true,
+					success(data){
+						console.log(data.data)
+						self.topics = data.data;
+						// this.title = data.data.title;
+					}
+				});
+			}
+		},
+		mounted:function(){
+			this.getDetail()
+		}
 	}
-	// console.log($);
+	console.log($);
 </script>
 
 <style>
@@ -39,11 +52,13 @@
 		height: 68px;
 		float:left;
 		padding-right: 2px;
+		border-radius: 5px;
 	} 
 	.relist li div h3,.relist li div p{
 		margin:0;
 		padding:0;
 		padding-left: 2px;
+		text-overflow:ellipsis
 	}
 	.relist li{
 		list-style: none;
