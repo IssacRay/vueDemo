@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="top_margin"></div>
+		<!-- <div class="top_margin"></div> -->
 		<relist></relist>
 	</div>
 </template>

@@ -30,6 +30,7 @@
 					async:true,
 					success(data){
 						console.log(data.data)
+						var tpcarr = data.data
 						self.topics = data.data;
 						// this.title = data.data.title;
 					}
@@ -58,14 +59,16 @@
 		margin:0;
 		padding:0;
 		padding-left: 2px;
-		text-overflow:ellipsis
+		overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
 	}
 	.relist li{
 		list-style: none;
 		height: 74px;
 		padding: 2px;
 		padding-bottom:4px;
-		border-bottom:1px solid #000;
+		border-bottom:1px solid #ccc;
 		margin:2px;
 	}
 </style>

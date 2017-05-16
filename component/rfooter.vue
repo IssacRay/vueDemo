@@ -1,6 +1,7 @@
 <template>
-<div class="rfooter">
-    <mu-paper>
+<div>
+    <div class="ffixed"></div>
+    <mu-paper class="rfooter">
         <mu-bottom-nav :value="bottomNav" shift @change="handleChange">
             <mu-bottom-nav-item value="movies" title="Movies" icon="ondemand_video"/>
             <mu-bottom-nav-item value="music" title="Music" icon="music_note"/>
@@ -33,5 +34,8 @@ export default {
       bottom:0;
       left: 0;
       width: 100%;
+    }
+    .ffixed{
+      height: 56px;
     }
 </style>
