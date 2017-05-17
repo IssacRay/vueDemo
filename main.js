@@ -12,6 +12,7 @@ Vue.use(Vuex);
 
 import "muse-ui/dist/muse-ui.css";
 import "swiper/dist/css/swiper.css";
+import "./css/base.css"
 
 import index from "./component/index.vue";
 import recommend from "./component/recommend.vue";

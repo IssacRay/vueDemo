@@ -24,14 +24,14 @@
 		},
 		mounted:function(){
 			var swiper = new Swiper('.swiper-container', {
-	        pagination: '.swiper-pagination',
-	        nextButton: '.swiper-button-next',
-	        prevButton: '.swiper-button-prev',
-	        paginationClickable: true,
-	        spaceBetween: 0,
-	        centeredSlides: true,
-	        autoplay: 2500,
-	        autoplayDisableOnInteraction: false
+		        pagination: '.swiper-pagination',
+		        nextButton: '.swiper-button-next',
+		        prevButton: '.swiper-button-prev',
+		        paginationClickable: true,
+		        spaceBetween: 0,
+		        centeredSlides: true,
+		        autoplay: 2500,
+		        autoplayDisableOnInteraction: false
    		 	});
 		}
 	}
@@ -42,7 +42,7 @@
         height: 100%;
     }
     body {
-        background: #eee;
+        /*background: #eee;*/
         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
         font-size: 14px;
         color:#000;
