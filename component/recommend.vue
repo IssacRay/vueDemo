@@ -9,8 +9,16 @@
 	import relist from "./relist.vue";
 
 	module.exports={
+		data:function(){
+			return {
+				title:"推荐",
+			}
+		},
 		components:{
 			relist,
+		},
+		computed:{
+			
 		}
 	}
 </script>

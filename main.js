@@ -12,12 +12,13 @@ Vue.use(Vuex);
 
 import "muse-ui/dist/muse-ui.css";
 import "swiper/dist/css/swiper.css";
-import "./css/base.css"
+import "./css/base.css";
 
 import index from "./component/index.vue";
 import recommend from "./component/recommend.vue";
 import home from "./component/home.vue";
 import topic from "./component/rtopic.vue";
+import apply from "./component/apply.vue";
 
 var router = new VueRouter({
 	routes:[{
@@ -35,14 +36,18 @@ var router = new VueRouter({
 		component:topic
 	},{
 		path:"/",
-		redirect:"/index/home",
+		redirect:"/index/recommend",
+	},{
+		path:"/apply",
+		component:apply
 	}]
-})
+}) 
 var store =new Vuex.Store({
 	state:{
-		title:[{title:"首页",href:"home"},{title:"推荐",href:"recommend"},{title:"应用",href:"apply"}],
+		title:[{title:"首页",href:"home"},{title:"推荐",href:"recommend"},{title:"应用",href:"/apply"}],
 		indexRouterId:"0",
-		topid:""
+		topid:"",
+		tle:"",
 	},
 	mutations:{
 		settitle:function(state,data){
@@ -53,6 +58,9 @@ var store =new Vuex.Store({
 		},
 		settopid:function(state,data){
 			return state.topid=data;
+		},
+		settle:function(state,data){
+			return state.tle=data;
 		}
 	},
 	getters:{
@@ -64,6 +72,9 @@ var store =new Vuex.Store({
 		},
 		gettopid:function(state){
 			return state.topid;
+		},
+		gettle:function(state){
+			return state.tle;
 		}
 	}
 })

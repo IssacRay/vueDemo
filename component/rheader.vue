@@ -7,11 +7,15 @@
 			<mu-icon-button icon="expand_more" slot="right"/>
 		</mu-appbar>
 		<rmenu v-show="ismenu"></rmenu>
+		<div @click="showMenu()">
+			<rmas v-show="ismenu"></rmas>
+		</div>
 		<div class="hfixed"></div>
 	</div>	
-</template>
+</template>z
 <script>
 	import rmenu from "./menu.vue";
+	import rmas from "./rmas.vue"
 	module.exports={
 		data:function(){
 			return { 
@@ -22,27 +26,29 @@
 			title:function(){
 				return this.$store.getters.gettitle[this.$store.getters.getindexRouterId].title;
 			},
+			// title:
 		},
 		methods:{
 			showMenu:function(){
 				this.ismenu=!this.ismenu;
-			}
+			},
 		},
 		components:{
 			rmenu:rmenu,
+			rmas:rmas,
 		}
 	}
 </script>
 
 <style>
 	.rheader{
-		height: 42px;
+		height: 30px;
 		position: fixed;
 		top:0;
 		left:0;
 	}
 	.hfixed{
-		height: 42px;
+		height: 30px;
 	}
 	
 

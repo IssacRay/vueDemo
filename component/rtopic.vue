@@ -28,7 +28,7 @@ import $ from "jquery";
 					url:"https://cnodejs.org/api/v1/topic/"+ id,
 					async:true,
 					success(data){
-						self.html=data.data
+						self.html=data.data;
 						console.log(self.topid)
 					}
 				})
