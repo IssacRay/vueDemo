@@ -37,5 +37,10 @@
 		height: 80px;
 		border-radius: 50%;
 	}
-
+	.loading{
+		text-align: center;
+		line-height:36px; 
+		height:0px;
+		overflow: hidden;
+	}
 </style>
