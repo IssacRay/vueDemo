@@ -19,7 +19,7 @@
 		height: 100%;
 		background-color: #fc0;
 		position: fixed;
-		top:42px;
+		top:44px;
 		left: 0px;
 		z-index: 4;
 		padding-bottom: 98px;

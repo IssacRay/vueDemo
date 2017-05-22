@@ -2,9 +2,9 @@
 <div id="ntop">
 <!-- <span>22</span> -->
   <mu-tabs :value="activeTab" @change="handleTabChange">
-    <mu-tab value="tab1" title="TAB ONE"/>
-    <mu-tab value="tab2" title="TAB TWO"/>
-    <mu-tab value="tab3" title="TAB ACTIVE"/>
+    <mu-tab value="tab1" title="首页"/>
+    <mu-tab value="tab2" title="推荐"/>
+    <mu-tab value="tab3" title="应用"/>
   </mu-tabs>
 
 </div>

@@ -1,9 +1,12 @@
 <template>
-	<nav class="rtop">
+<div>
+	<nav class="rnav">
 		<router-link v-for="(title,index) in titles" :to="title.href" class="li" tag="li">	
 			<li v-text="title.title" @click="click(index)" :class="{'light':item==index}"></li>
-		</router-link>	
+		</router-link>
 	</nav>
+	<div class="ffixed"></div>
+</div>
 </template>
 
 <script>
@@ -29,21 +32,35 @@
 </script>
 
 <style>
-	.rtop{
+	.rnav{
 		width: 100%;
-		height: 30px;
+		height: 36px;
 		display: flex;
+		background-color: #7e57c2;
 		box-sizing: border-box;
-		border:2px solid #fff;
+		/*border:2px solid #fff;*/
+		/*border-bottom:2px solid #ff4081;*/
+	 	position: fixed;
+		bottom: 0px;
+		left: 0px; 
+		z-index: 5;
 	}
-	.rtop .li{
+	.rnav .li{
 		flex:1;
 		list-style: none;
-		line-height: 26px;
+		color:#ccc;
+		line-height: 34px;
 		text-align: center;
+		/*box-sizing:border-box;*/
+		/*padding-top: 2px;*/
+		border-bottom:2px solid #7e57c2;
 	}
-	.rtop .light{
+	.rnav .light{
 		color:#fff;
 		background-color: #7e57c2;
+		border-bottom: 2px solid #ff4081;
 	}
+	.ffixed{
+      height: 36px;
+    }
 </style>

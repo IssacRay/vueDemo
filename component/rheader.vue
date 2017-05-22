@@ -1,6 +1,6 @@
 <template>
 	<div >
-		<mu-appbar :title="title" class="rheader">
+		<mu-appbar :title="title" class="rheader" style="text-align:center">
 			<mu-icon-button icon="menu" slot="left" @click="showMenu()"/>
 			<mu-flat-button label="" slot="right"/>
 			<mu-flat-button href="333" label="" slot="right"/>
@@ -42,13 +42,14 @@
 
 <style>
 	.rheader{
-		height: 30px;
+		height: 44px;
 		position: fixed;
 		top:0;
 		left:0;
+		border-bottom: 2px solid #ff4081
 	}
 	.hfixed{
-		height: 30px;
+		height: 44px;
 	}
 	
 

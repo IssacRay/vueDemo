@@ -1,18 +1,18 @@
 <template>
 	<div>
-		<!-- <rheader></rheader> -->
-		<!-- <rtop></rtop> -->
-		<ntop></ntop>
+		<rheader></rheader>
 		<router-view></router-view>
+		<rnav></rnav>
+		<!-- <ntop></ntop> -->
 		<!-- <rfooter></rfooter> -->
 	</div>
 </template>
 
 <script>
-	import rfooter from "./rfooter.vue";
+	// import rfooter from "./rfooter.vue";
 	import rheader from "./rheader.vue";
-	import rtop from "./rtop.vue";
-	import ntop from "./ntop.vue";
+	import rnav from "./rnav.vue";
+	// import ntop from "./ntop.vue";
 	module.exports={
 		data:function(){
 			return {
@@ -20,10 +20,10 @@
 			}
 		},
 		components:{
-			rfooter:rfooter,
+			// rfooter:rfooter,
 			rheader:rheader,
-			rtop:rtop,
-			ntop:ntop,
+			rnav:rnav,
+			// ntop:ntop,
 		}
 	}
 </script>
