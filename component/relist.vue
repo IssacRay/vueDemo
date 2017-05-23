@@ -1,5 +1,6 @@
 <template>
 	<div>
+		<div class="rflex" v-show="Rtab"></div>
 		<div class="loading">
 			<div v-show="color==0">正在加载.....</div>
 			<div class="suss" v-show="color==1">加载成功</div>
@@ -258,5 +259,8 @@
 		background-color: #16a951;
 		line-height: 26px;
 		height: 26px;
+	}
+	.rflex{
+		height: 24px;	
 	}
 </style>

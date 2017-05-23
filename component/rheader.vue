@@ -12,31 +12,40 @@
 		</div>
 		<div class="hfixed"></div>
 	</div>	
-</template>z
+</template>
 <script>
+	import $ from "jquery";
 	import rmenu from "./menu.vue";
 	import rmas from "./rmas.vue"
 	module.exports={
 		data:function(){
 			return { 
 				ismenu:false,
-				isrtab:false
+				// isrtab:false
 			}
 		},
 		computed:{
 			title:function(){
 				return this.$store.getters.gettitle[this.$store.getters.getindexRouterId].title;
 			},
+			isratab:function(){
+				return this.$store.getters.getRtab;
+			}
 			// title:
 		},
 		methods:{
 			showMenu:function(){
 				this.ismenu=!this.ismenu;
+				this.$store.commit('setRtab',false);
 			},
 			showRtab:function(){
+				this.isrtab= this.$store.getters.getRtab;
+				console.log(this.isrtab);
+				this.ismenu=false;
 				this.isrtab=!this.isrtab;
-				console.log(123);
+				console.log(this.isrtab);
 				this.$store.commit('setRtab',this.isrtab);
+
 			}
 		},
 		components:{
@@ -57,6 +66,5 @@
 	.hfixed{
 		height: 44px;
 	}
-	
 
 </style>
