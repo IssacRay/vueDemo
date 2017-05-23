@@ -46,7 +46,7 @@
 		position: fixed;
 		top:0;
 		left:0;
-		border-bottom: 2px solid #ff4081
+		border-bottom: 2px solid #ff4081;
 	}
 	.hfixed{
 		height: 44px;
