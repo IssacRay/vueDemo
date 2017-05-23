@@ -4,7 +4,7 @@
 			<mu-icon-button icon="menu" slot="left" @click="showMenu()"/>
 			<mu-flat-button label="" slot="right"/>
 			<mu-flat-button href="333" label="" slot="right"/>
-			<mu-icon-button icon="expand_more" slot="right"/>
+			<mu-icon-button icon="expand_more" slot="right" @click="showRtab()"/>
 		</mu-appbar>
 		<rmenu v-show="ismenu"></rmenu>
 		<div @click="showMenu()">
@@ -19,7 +19,8 @@
 	module.exports={
 		data:function(){
 			return { 
-				ismenu:false
+				ismenu:false,
+				isrtab:false
 			}
 		},
 		computed:{
@@ -32,6 +33,11 @@
 			showMenu:function(){
 				this.ismenu=!this.ismenu;
 			},
+			showRtab:function(){
+				this.isrtab=!this.isrtab;
+				console.log(123);
+				this.$store.commit('setRtab',this.isrtab);
+			}
 		},
 		components:{
 			rmenu:rmenu,

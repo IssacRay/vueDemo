@@ -48,6 +48,8 @@ var store =new Vuex.Store({
 		indexRouterId:"0",
 		topid:"",
 		tle:"",
+		rtab:false,
+		tab:"all"
 	},
 	mutations:{
 		settitle:function(state,data){
@@ -61,6 +63,12 @@ var store =new Vuex.Store({
 		},
 		settle:function(state,data){
 			return state.tle=data;
+		},
+		setRtab:function(state,data){
+			return state.rtab=data;
+		},
+		settab:function(state,data){
+			return state.tab=data;
 		}
 	},
 	getters:{
@@ -75,6 +83,12 @@ var store =new Vuex.Store({
 		},
 		gettle:function(state){
 			return state.tle;
+		},
+		getRtab:function(state){
+			return state.rtab;
+		},
+		gettab:function(state){
+			return state.tab;
 		}
 	}
 })

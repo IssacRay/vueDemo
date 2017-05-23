@@ -5,7 +5,9 @@
 			<div class="suss" v-show="color==1">加载成功</div>
 			<!-- <span>加载失败</span> -->
 		</div>
-		<rtab></rtab>
+		<div @click="getData()" class="rtab">
+			<rtab v-show="Rtab"></rtab>
+		</div>
 		<nav class="relist">
 		<router-link :to="url" tag="div">	
 			<li v-for="topic in topics" @click="click(topic.id)">
@@ -42,8 +44,17 @@
 		components:{
 			rtab,
 		},
+		computed:{
+			Rtab:function(){
+				return this.$store.getters.getRtab;
+			},
+			tab:function(){
+				return this.$store.getters.gettab;
+			}
+		},
 		methods:{
 			getDetail:function() {
+				console.log(this.tab)
 				console.log(this);
 				var self = this
 				$.ajax({
@@ -53,7 +64,7 @@
 					data:{
 						page:self.page,
 						limit:10,
-						// tab:"job"
+						tab:self.tab,
 					},
 					success(data){
 						var tpcarr = data.data;
@@ -71,7 +82,8 @@
 					url:"https://cnodejs.org/api/v1/topics",
 					async:true,
 					data:{
-						limit:10
+						limit:10,
+						tab:self.tab,
 					},
 					success(data){
 						self.topics = data.data;
@@ -89,7 +101,7 @@
 					this.getDetail();
 				}
 				console.log(1);
-			}
+			},
 		},
 		mounted:function(){
 			var self=this
@@ -149,8 +161,12 @@
 				}else{
 					$(".loading").animate({height:0},200)
 				}
+			});
+			$(".rtab").on("click",function(){
+				self.$store.commit("setRtab",false)
 			})
 		}
+
 	}
 	// console.log($);
 	// $(window).scroll(function(){
@@ -220,6 +236,12 @@
 	}
 	.relist .content .share{
 
+	}
+	.rtab{
+		position: fixed;
+		top:44px;
+		left:0;
+		z-index: 3;
 	}
 	.loading{
 		text-align: center;
