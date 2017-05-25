@@ -29,17 +29,20 @@
 			<!-- <mu-text-field hintText="提示文字"/> -->
 		</div>
 		<div class="fwirte"></div>
+		<wload v-show="isload" style="background-color:#fff"></wload>
 	</div>
 </template>
 
 <script>
 
 import $ from "jquery";
+import wload from "./wload.vue";
 	module.exports={
 		data:function(){
 			return {
 				html:"",
-				pins:[]
+				pins:[],
+				isload:false,
 			}
 		},
 		computed:{
@@ -47,9 +50,13 @@ import $ from "jquery";
 				return this.$store.getters.gettopid;
 			}
 		},
+		components:{
+			wload,
+		},
 		methods:{
 			gettopic:function(id){
 				var self =this;
+				self.isload=true;
 				$.ajax({
 					type:"get",
 					url:"https://cnodejs.org/api/v1/topic/"+ id,
@@ -57,6 +64,7 @@ import $ from "jquery";
 					success(data){
 						self.html=data.data;
 						self.pins=data.data.replies;
+						self.isload=false;
 						console.log(data);
 						console.log(self.topid);
 					}
@@ -104,7 +112,7 @@ import $ from "jquery";
 		font-size: 24px;
 		line-height: 44px;
 		color:#fff;
-		z-index: 2;
+		z-index: 3;
 	}
 	.rtopic h1 {
 		font-size: 28px;
@@ -144,6 +152,8 @@ import $ from "jquery";
 		/*flex:7;*/
 		font-size:13px;
 		min-height: 50px;
+		color:rgba(0,0,0,0.87);
+		font-size: 12px;
 	}
 	.pinlun .user{
 		border-bottom:1px solid #ccc;
@@ -180,6 +190,7 @@ import $ from "jquery";
 		background-color: #fff;
 		display: flex;
 		padding:5px 10px 0;
+		z-index: 3;
 	}
 	.wirte input{
 		width: 100%;

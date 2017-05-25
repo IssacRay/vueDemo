@@ -4,11 +4,16 @@
 		<input type="text" v-model="atk">
 		<button @click="getuser()">提交</button>
 		<!-- <p v-text="atk"></p> -->
+		<wload></wload>
+		<rmas></rmas>		
 	</div>
 </template>
 
 <script>
 	import $ from "jquery";
+	import wload from "./wload.vue";
+	import rmas from "./rmas.vue"
+
 	module.exports={
 		data:function(){
 			return {
@@ -29,6 +34,10 @@
 					}
 				})
 			}
+		},
+		components:{
+			wload,
+			rmas,
 		}
 	}
 </script>

@@ -26,6 +26,7 @@
 		</router-link>	
 		</nav>
 		<!-- <button @click="getDetail()">ok</button> -->
+		<wload v-show="isload"></wload>
 	</div>
 </template>
 
@@ -33,17 +34,20 @@
 //测试
 	import $ from "jquery";
 	import rtab from "./rtab.vue";
+	import wload from "./wload.vue"
 	module.exports={
 		data:function(){
 			return{
 				topics:[],
 				url:"",
 				page:1,
-				color:0
+				color:0,
+				isload:false,
 			}
 		},
 		components:{
 			rtab,
+			wload
 		},
 		computed:{
 			Rtab:function(){
@@ -55,9 +59,10 @@
 		},
 		methods:{
 			getDetail:function() {
-				console.log(this.tab)
+				// console.log(this.tab)
 				console.log(this);
 				var self = this
+				self.isload=true;
 				$.ajax({
 					type:"get",
 					url:"https://cnodejs.org/api/v1/topics",
@@ -72,12 +77,15 @@
 						self.topics = self.topics.concat(tpcarr);
 						// console.log(this);
 						console.log(data.data);
+						self.isload=false;
+						console.log(self.tab);
 						self.page++
 					}
 				});
 			},
 			getData:function(cb){
-				var self = this
+				var self=this;
+				self.isload=true;
 				$.ajax({
 					type:"get",
 					url:"https://cnodejs.org/api/v1/topics",
@@ -89,6 +97,7 @@
 					success(data){
 						self.topics = data.data;
 						console.log(data);
+						self.isload=false;
 						cb();
 					}
 				});
@@ -200,6 +209,13 @@
 		overflow: hidden;
 		text-overflow:ellipsis;
 		white-space: nowrap;
+		/*-webkit-line-clamp:2;*/
+		/*display:-webkit-box; 
+		-webkit-box-orient:vertical;
+		-webkit-line-clamp:2; */
+	}
+	.relist li div h3{
+		font-size: 15px;
 	}
 	.relist li{
 		list-style: none;
