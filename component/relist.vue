@@ -117,7 +117,8 @@
 			var self=this
 			var loadh
 			this.getDetail();	
-			$(window).scroll(function(){
+			$("window").scroll(function(){
+				// console.log("relist");
 				// console.log(document.body.clientHeight)
 				// console.log(window.screen.availHeight + document.body.scrollTop)
 				if(window.screen.availHeight + document.body.scrollTop== document.body.clientHeight){
@@ -194,6 +195,7 @@
 <style>
 	.relist{
 		width: 100%;
+		/*height: 100%;*/
 	}
 	.relist li img{
 		width: 70px;
@@ -219,11 +221,13 @@
 	}
 	.relist li{
 		list-style: none;
-		height: 74px;
-		padding: 2px;
+		height: 76px;
+		padding: 4px;
 		padding-bottom:4px;
-		border-bottom:1px solid #ccc;
-		margin:2px;
+		/*border-bottom:1px solid #ccc;*/
+		border:1px solid #ccc;
+		margin:4px 2px;
+		border-radius: 3px
 	}
 	.relist span{
 		font-size: 12px;

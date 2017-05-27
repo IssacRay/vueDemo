@@ -2,7 +2,6 @@
 	<div>
 		<swiper></swiper>
 		<rlist></rlist>
-		<rmas v-show="false"></rmas>
 	</div>
 </template>
 

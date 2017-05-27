@@ -1,16 +1,16 @@
 <template>
 	<div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide"><img src="../img/node1.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="../img/vue1.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="../img/ng2.jpg"></div>
+        <!--     <div class="swiper-slide">Slide 4</div>
             <div class="swiper-slide">Slide 5</div>
             <div class="swiper-slide">Slide 6</div>
             <div class="swiper-slide">Slide 7</div>
             <div class="swiper-slide">Slide 8</div>
             <div class="swiper-slide">Slide 9</div>
-            <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide">Slide 10</div> -->
         </div>
     </div>
 </template>
@@ -19,7 +19,11 @@
 	module.exports={
 		data(){
 			return {
-				src: require("../img/u=3507267171,1020998411&fm=23&gp=0.jpg")
+				src: require("../img/u=3507267171,1020998411&fm=23&gp=0.jpg"),
+                src1: require("../img/node1.jpg"),
+                src2: require("../img/vue1.jpg"),
+                src3: require("../img/ng1.jpg"),
+                
 			}
 		},
 		mounted:function(){
@@ -74,5 +78,9 @@
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
+    }
+    img{
+        width: 100%;
+        height: 100%;
     }
 </style>

@@ -30,21 +30,21 @@ var router = new VueRouter({
 		},{
 			path:"recommend",
 			component:recommend
+		},{
+			path:"apply",
+			component:apply
 		}]
 	},{
 		path:"/topic",
 		component:topic
 	},{
 		path:"/",
-		redirect:"/index/recommend",
-	},{
-		path:"/apply",
-		component:apply
+		redirect:"/index/home",
 	}]
 }) 
 var store =new Vuex.Store({
 	state:{
-		title:[{title:"首页",href:"home"},{title:"推荐",href:"recommend"},{title:"应用",href:"/apply"}],
+		title:[{title:"首页",href:"home"},{title:"推荐",href:"recommend"},{title:"应用",href:"apply"}],
 		indexRouterId:"0",
 		topid:"",
 		tle:"",

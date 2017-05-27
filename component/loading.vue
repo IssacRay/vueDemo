@@ -13,7 +13,7 @@ import $ from "jquery";
 			}
 		},
 		methods:{
-
+			
 		},
 		mounted:function(){
 			$(window).scroll(function(){
@@ -29,7 +29,7 @@ import $ from "jquery";
 </script>
 <style>
 	.loading{
-		height: 24px;
+		/*height: 24px;*/
 		text-align: center;
 		line-height:36px; 
 		height:0px;
