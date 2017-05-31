@@ -74,7 +74,9 @@
 					},
 					success(data){
 						var tpcarr = data.data;
+						console.log("加载成功")
 						self.topics = self.topics.concat(tpcarr);
+						console.log(self.topics)
 						// console.log(this);
 						console.log(data.data);
 						self.isload=false;
@@ -117,11 +119,11 @@
 			var self=this
 			var loadh
 			this.getDetail();	
-			$("window").scroll(function(){
-				// console.log("relist");
+			$(window).scroll(function(){
+				// console.log("relist");sa
 				// console.log(document.body.clientHeight)
 				// console.log(window.screen.availHeight + document.body.scrollTop)
-				if(window.screen.availHeight + document.body.scrollTop== document.body.clientHeight){
+				if(window.screen.availHeight + document.body.scrollTop == document.body.clientHeight){
 					self.getDetail();
 				}
 			});
