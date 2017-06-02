@@ -18,6 +18,9 @@
 			swiper:swiper,
 			rlist:rlist,
 			rmas:rmas,
+		},
+		mounted:function(){
+			this.$store.commit('setindexRouterId',0);
 		}
 	}
 </script>

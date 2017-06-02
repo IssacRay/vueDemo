@@ -21,6 +21,7 @@
 					<span class="tab" v-show="topic.top!==true&&topic.tab=='share'" style="background-color:#fc0"> 分享 </span>
 					<span class="tab" v-show="topic.top!==true&&topic.tab=='ask'" style="background-color:#000079"> 问答 </span>
 					<span class="tab" v-show="topic.top!==true&&topic.tab=='job'" style="background-color:#ea0000"> 招聘 </span>
+					<span class="tab" v-show="topic.top!==true&&topic.tab=='dev'" style="background-color:#5cadad"> 问题 </span>
 				</div>
 			</li>
 		</router-link>	
@@ -178,6 +179,7 @@
 			$(".rtab").on("click",function(){
 				self.$store.commit("setRtab",false)
 			})
+			this.$store.commit('setindexRouterId',1);
 		}
 
 	}

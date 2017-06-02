@@ -38,7 +38,11 @@
 			// rmas,
 			elist,
 
+		},
+		mounted:function(){
+			this.$store.commit('setindexRouterId',2);
 		}
+
 	}
 </script>
 	

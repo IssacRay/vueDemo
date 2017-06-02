@@ -1,13 +1,14 @@
 <template>
 <div class="elist">
 		<h3>每日十句英语美文</h3>
+		<!-- <a name="top"></a> -->
 	<nav>
 		<li v-for="n in news" style="list-style:none;border:1px solid #ccc; padding:10px 8px; font-size:12px" >
 			<p v-text="n.english"></p>
 			<p v-text="n.chinese"></p>
 		</li>
 	</nav>
-	<div class="ebtn" @click="getEnew()">更换一下</div>
+	<div class="ebtn" @click="getEnew()"><a href="javascript:scroll(0,0)" style="color:#000">更换一下</a></div>
 </div>
 </template>
 

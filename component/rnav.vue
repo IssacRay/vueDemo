@@ -2,7 +2,7 @@
 <div>
 	<nav class="rnav">
 		<router-link v-for="(title,index) in titles" :to="title.href" class="li" tag="li">	
-			<li v-text="title.title" @click="click(index)" :class="{'light':item==index}"></li>
+			<li v-text="title.title" @click="click(index)" :class="{'light':islight==index}"></li>
 		</router-link>
 	</nav>
 	<div class="ffixed"></div>
@@ -20,6 +20,9 @@
 			titles:function(){
 				return this.$store.getters.gettitle;
 			},
+			islight:function(){
+				return this.$store.getters.getindexRouterId;
+			}
 		},
 		methods:{
 			click:function(data){				
