@@ -34264,6 +34264,7 @@ module.exports = {
 //
 //
 //
+//
 
 /***/ }),
 /* 28 */
@@ -34658,6 +34659,7 @@ module.exports = {
 //
 //
 //
+//
 
 //测试
 
@@ -34819,6 +34821,9 @@ module.exports = {
 	computed: {
 		titles: function titles() {
 			return this.$store.getters.gettitle;
+		},
+		islight: function islight() {
+			return this.$store.getters.getindexRouterId;
 		}
 	},
 	methods: {
@@ -35694,7 +35699,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('li', {
       class: {
-        'light': _vm.item == index
+        'light': _vm.islight == index
       },
       domProps: {
         "textContent": _vm._s(title.title)
@@ -35918,7 +35923,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticStyle: {
         "background-color": "#ea0000"
       }
-    }, [_vm._v(" 招聘 ")])])])
+    }, [_vm._v(" 招聘 ")]), _vm._v(" "), _c('span', {
+      directives: [{
+        name: "show",
+        rawName: "v-show",
+        value: (topic.top !== true && topic.tab == 'dev'),
+        expression: "topic.top!==true&&topic.tab=='dev'"
+      }],
+      staticClass: "tab",
+      staticStyle: {
+        "background-color": "#5cadad"
+      }
+    }, [_vm._v(" 问题 ")])])])
   }))], 1), _vm._v(" "), _c('wload', {
     directives: [{
       name: "show",
@@ -36038,7 +36054,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.getEnew()
       }
     }
-  }, [_vm._v("更换一下")])])
+  }, [_c('a', {
+    staticStyle: {
+      "color": "#000"
+    },
+    attrs: {
+      "href": "javascript:scroll(0,0)"
+    }
+  }, [_vm._v("更换一下")])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
